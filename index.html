@@ -1,27 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SebOS Portfolio</title>
+    <style>
+        body {
+            font-family: Helvetica, "Noto Sans", sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background-image: url("2fort_invasion.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-    </head>
-    <body style="background-color: #6da3e3"></body>
-            <h1>Welcome to my OS!</h1>
-            <h2>Introdution</h2>
-            <p>Hello! Its me Sebastien.</p>
-            <img style="width: 128px; height: 128px" src="heavytf2_light.jpg" />
-            <br>
-            <a href="https://steamcommunity.com/profiles/76561199625864095/">My Steam Profile</a>
-            <p><strong>I dont have a good enough image to use as a profile picture, so for now im using heavy tf2.</strong></p>
-            <br>
-            <p>Im 13 and since 10 i received the interest of coding with covid-19 since nobody had anything to do.</p>
-            <p>Now im currently learning : Unity developpement and JavaScript.</p>
-            <br>
-            <p>I still got school till the end of june but after that ill be slacking off and conding as much as i like.</p>
-            <h2>Sandbox of different text styles</h2>
-                <p><s>Strike Through</s></p>    
-                <p>break the <br> line like this</p>
-                <p>use strong to <strong>bold text</strong></p>
-                <p> <dfn>DFN Tag</dfn> is a tag that marks something being defined</p>
-                <p><abbr title="abbreviation">abbr</abbr> is a tag that marks an abbreviated term</p>
-    </body>
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(512px, calc(100% - 32px));
+            padding: 24px;
+            border: 1px solid #ccc;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
 
+        h1 {
+            margin: 0 0 12px;
+            padding: 8px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+        }
+
+        .profile-image {
+            width: 128px;
+            height: 128px;
+            display: block;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div
+    style="position: absolute; width: 100%; display: flex; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.125); color: #fff; justify-content: space-between; gap: 32px;">
+        <p
+          style="margin-left: 16px; font-weight: 700; background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
+            SebOS Portfolio
+        </p>
+        <p style="margin-left: 16px; background-color: rgba(256, 256, 256, 0.25); padding: 4px 12px; border-radius: 16px;">
+            School is boring rn
+        </p>
+        <p
+          style="margin-right: 16px; background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
+            6/21/2023 3:41 PM
+        </p>
+  </div>
+    <div class="container">
+        <h1>SebOS</h1>
+        <h2>Introduction</h2>
+        <p>Hello! It's me, Sebastien.</p>
+        <img class="profile-image" src="heavytf2_light.jpg" alt="Team Fortress 2 Heavy profile image">
+        <p><a href="https://steamcommunity.com/profiles/76561199625864095/" target="_blank" rel="noopener noreferrer">My Steam Profile</a></p>
+        <p><strong>I don't have a good enough image to use as a profile picture, so for now I'm using Heavy from TF2.</strong></p>
+        <p>I'm 13, and since I was 10 I became interested in coding during COVID-19 when nobody had anything to do.</p>
+        <p>Now I'm currently learning Unity development and JavaScript.</p>
+        <p>I still have school until the end of June, but after that I'll be coding as much as I like.</p>
+    </div>
+</body>
 </html>
