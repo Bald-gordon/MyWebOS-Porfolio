@@ -67,15 +67,18 @@
             SebOS Portfolio
         </p>
         <p style="margin-left: 16px; background-color: rgba(256, 256, 256, 0.25); padding: 4px 12px; border-radius: 16px;">
-            School is boring rn
+            🎒School is boring rn📓
         </p>
-        <p
+        <p id="timeElement"
           style="margin-right: 16px; background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
             6/21/2023 3:41 PM
         </p>
   </div>
-    <div class="container">
-        <h1>SebOS</h1>
+    <div id="welcome" class="container">
+        <div id="welcomeheader" style="cursor: move; padding: 8px; background-color: #000; color: #fff; border-radius: 8px; margin-bottom: 16px;">
+            <h1> My website </h1>
+            <p style="cursor: pointer" id="welcomeclose">Close</p>
+        </div>
         <h2>Introduction</h2>
         <p>Hello! It's me, Sebastien.</p>
         <img class="profile-image" src="heavytf2_light.jpg" alt="Team Fortress 2 Heavy profile image">
@@ -85,5 +88,15 @@
         <p>Now I'm currently learning Unity development and JavaScript.</p>
         <p>I still have school until the end of June, but after that I'll be coding as much as I like.</p>
     </div>
+    <script>
+    function updateTime() {
+        var currentTime = new Date().toLocaleString();
+        var timeText = document.querySelector("#timeElement");
+        timeText.innerHTML = currentTime;
+    }
+    setInterval(updateTime, 1000);
+</script>
+  <script src="script.js"></script>
+
 </body>
 </html>
