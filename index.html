@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SebOS Portfolio</title>
+    <script type="module" src="./script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
         body {
             font-family: Helvetica, "Noto Sans", sans-serif;
@@ -75,9 +77,12 @@
         </p>
   </div>
     <div id="welcome" class="container">
-        <div id="welcomeheader" style="cursor: move; padding: 8px; background-color: #000; color: #fff; border-radius: 8px; margin-bottom: 16px;">
-            <h1> My website </h1> <p style="cursor: pointer" id="welcomeopen">ThomasOS</p>
-            <p style="cursor: pointer" id="welcomeclose">Close</p>
+        <div id="welcomeheader" style="cursor: move; padding: 8px; background-color: #000; color: #fff; border-radius: 8px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; gap: 16px; align-items: center; flex: 1;">
+                <h1 style="margin: 0;"> My website </h1> 
+                <p style="cursor: pointer; margin: 0;" id="welcomeopen">Welcome</p>
+            </div>
+            <div class="closebutton" id="welcomeclose"></div>
         </div>
         <h2>Introduction</h2>
         <p>Hello! It's me, Sebastien.</p>
