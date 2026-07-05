@@ -1,11 +1,119 @@
+body {
+  font-family: Helvetica, "Noto Sans", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-image: url("2fort_invasion.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.topbar {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.125);
+  color: #fff;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.topbar-text,
+.topbar-note,
+#timeElement {
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.125);
+}
+
+.topbar-text {
+  font-weight: 700;
+}
+
+.topbar-note {
+  position: absolute;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+#timeElement {
+  position: absolute;
+  right: 16px;
+}
+
+.window {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  position: absolute;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background-color: rgba(117, 117, 117, 0.6);
+}
+
+.windowheader {
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  justify-content: space-between;
+  margin: 16px 16px 32px;
+  padding: 12px 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.windowheader .header-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex: 1;
+}
+
+.window-title {
+  margin: 0;
+}
+
+#welcomeopen {
+  cursor: pointer;
+  margin: 0;
+}
+
+h2 {
+  margin: 0 0 12px;
+}
+
+.profile-image {
+  width: 128px;
+  height: 128px;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 .closebutton {
   width: 32px;
-  height: 32 px;
+  height: 32px;
   cursor: pointer;
   background-color: #EC6B5E;
-  border-radius: 24px;
+  border-radius: 64px;
   border: solid 1px rgba(0, 0, 0, 0.25);
-  margin-left: 6px;
+  margin-left: 16px;
 }
 
