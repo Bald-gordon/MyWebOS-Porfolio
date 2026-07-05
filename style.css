@@ -53,7 +53,7 @@ body {
   position: absolute;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  background-color: rgba(117, 117, 117, 0.6);
+  background-color: rgba(172, 172, 172, 0.6);
 }
 
 .windowheader {
@@ -78,11 +78,25 @@ body {
 
 .window-title {
   margin: 0;
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-#welcomeopen {
-  cursor: pointer;
-  margin: 0;
+.window-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px 24px;
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.window-content h2 {
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 h2 {

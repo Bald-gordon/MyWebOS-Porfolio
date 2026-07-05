@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeScreen = document.getElementById("welcome");
   const welcomeScreenClose = document.getElementById("welcomeclose");
-  const welcomeScreenOpen = document.getElementById("welcomeopen");
 
   if (welcomeScreen) {
     dragElement(welcomeScreen);
@@ -10,14 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (welcomeScreenClose) {
     welcomeScreenClose.addEventListener("click", function () {
       welcomeScreen.style.display = "none";
-    });
-  }
-
-  if (welcomeScreenOpen) {
-    welcomeScreenOpen.addEventListener("click", function () {
-      if (welcomeScreen) {
-        welcomeScreen.style.display = "flex";
-      }
     });
   }
 });

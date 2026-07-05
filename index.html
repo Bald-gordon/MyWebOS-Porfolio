@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SebOS Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
@@ -16,19 +19,25 @@
         <div class="windowheader" id="welcomeheader">
             <div class="header-group">
                 <h1 class="window-title">My website</h1>
-                <p id="welcomeopen">Welcome</p>
             </div>
             <div class="closebutton" id="welcomeclose"></div>
         </div>
-        <h2>Introduction</h2>
-        <p>Hello! It's me, Sebastien.</p>
-        <img class="profile-image" src="heavytf2_light.jpg" alt="Team Fortress 2 Heavy profile image">
-        <p><a href="https://steamcommunity.com/profiles/76561199625864095/" target="_blank" rel="noopener noreferrer">My Steam Profile</a></p>
-        <p><strong>I don't have a good enough image to use as a profile picture, so for now I'm using Heavy from TF2.</strong></p>
-        <p>I'm 13, and since I was 10 I became interested in coding during COVID-19 when nobody had anything to do.</p>
-        <p>Now I'm currently learning Unity development and JavaScript.</p>
-        <p>I still have school until the end of June, but after that I'll be coding as much as I like.</p>
+        <div class="window-content">
+            <h2>Introduction</h2>
+            <p>Hello! It's me, Sebastien.</p>
+            <img class="profile-image" src="heavytf2_light.jpg" alt="Team Fortress 2 Heavy profile image">
+            <p><a href="https://steamcommunity.com/profiles/76561199625864095/" target="_blank" rel="noopener noreferrer">My Steam Profile</a></p>
+            <p><strong>I don't have a good enough image to use as a profile picture, so for now I'm using Heavy from TF2.</strong></p>
+            <p>I'm 13, and since I was 10 I became interested in coding during COVID-19 when nobody had anything to do.</p>
+            <p>Now I'm currently learning Unity development and JavaScript.</p>
+            <p>Its summer vacation! I can do as many things as I want.</p>
+        </div>
+    <div id="desktopApps" style="padding-top: 64px;" class="selected" styles="(styles)">
+        <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
+            <img src="./gnome-certificates.png" style="width: 64px; height: 64px; border-radius: 24px;">
+      <p style="margin: 0px; color: #fff; ">Notes</p>
     </div>
+  </div>
     <script>
     function updateTime() {
         var currentTime = new Date().toLocaleString();
