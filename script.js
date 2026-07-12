@@ -3,6 +3,12 @@ let biggestIndex = 1;
 let topBar = document.querySelector("#top");
 
 var certificates = [
+  {
+    title: "Sample Certificate",
+    issuer: "Test Issuer",
+    date: "2024",
+    file: "gnome-certificate.png"
+  }
 ];
 
 // Steam status tracking
