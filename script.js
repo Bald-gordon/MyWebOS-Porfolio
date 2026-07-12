@@ -4,10 +4,10 @@ let topBar = document.querySelector("#top");
 
 var certificates = [
   {
-    title: "Sample Certificate",
-    issuer: "Test Issuer",
+    title: "Game Design & Dev",
+    issuer: "Hack Club",
     date: "2024",
-    file: "gnome-certificate.png"
+    file: "gamedesignandev.png"
   }
 ];
 
@@ -93,9 +93,9 @@ function displayCertificate(index) {
     topbarNote.textContent = `📜 ${certItem.title}`;
   }
   
-  // Display image in viewer
+  // Display image in viewer using the file from certificate object
   viewer.innerHTML = `
-    <img src="./gnome-certificate.png" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box;">
+    <img src="./${certItem.file}" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box;">
   `;
 }
 
