@@ -172,13 +172,16 @@ function addToSideBar(index) {
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeScreen = document.getElementById("welcome");
   const certificatesScreen = document.getElementById("certificates");
+  const infoScreen = document.getElementById("info");
   const certificatesIcon = document.getElementById("certificatesIcon");
   const infoIcon = document.getElementById("infoIcon");
   const aboutMeIcon = document.getElementById("aboutMeIcon");
+  const slackIcon = document.getElementById("slackIcon");
 
   // Initialize windows
   initializeWindow("welcome");
   initializeWindow("certificates");
+  initializeWindow("info");
 
   // About Me icon - opens welcome window
   if (aboutMeIcon) {
@@ -189,12 +192,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Info icon - also opens welcome window
+  // Info icon - opens info window
   if (infoIcon) {
     infoIcon.addEventListener("click", function (e) {
       e.stopPropagation();
       selectIcon(infoIcon);
-      openWindow(welcomeScreen);
+      openWindow(infoScreen);
     });
   }
 
@@ -204,6 +207,15 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation();
       selectIcon(certificatesIcon);
       openWindow(certificatesScreen);
+    });
+  }
+
+  // Slack icon - redirect to Slack profile
+  if (slackIcon) {
+    slackIcon.addEventListener("click", function (e) {
+      e.stopPropagation();
+      selectIcon(slackIcon);
+      window.open("https://hackclub.enterprise.slack.com/team/U0B6S010H2B", "_blank");
     });
   }
 
@@ -228,6 +240,24 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedIcon.classList.remove("selected");
       selectedIcon = null;
     }
+  });
+
+  // Info auto-save functionality
+  const infoContent = document.getElementById("infoContent");
+  
+  // Load saved content from localStorage
+  const savedInfo = localStorage.getItem("infoContent");
+  if (savedInfo) {
+    infoContent.innerHTML = savedInfo;
+  }
+  
+  // Auto-save on input
+  infoContent.addEventListener("blur", function() {
+    localStorage.setItem("infoContent", infoContent.innerHTML);
+  });
+  
+  infoContent.addEventListener("keyup", function() {
+    localStorage.setItem("infoContent", infoContent.innerHTML);
   });
 });
 
