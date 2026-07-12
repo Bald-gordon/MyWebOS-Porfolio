@@ -121,6 +121,52 @@ a:hover {
   text-decoration: underline;
 }
 
+.desktop-icons {
+  position: absolute;
+  top: 72px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 96px;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  user-select: none;
+}
+
+.desktop-icon-glyph {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.desktop-icon-label {
+  margin-top: 6px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 13px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.desktop-icon.selected {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.desktop-icon.selected .desktop-icon-label {
+  background-color: rgba(0, 102, 204, 0.85);
+  text-shadow: none;
+}
+
 .closebutton {
   width: 32px;
   height: 32px;
@@ -129,5 +175,37 @@ a:hover {
   border-radius: 64px;
   border: solid 1px rgba(0, 0, 0, 0.25);
   margin-left: 16px;
+}
+
+/* Notes App Styling */
+#notes .window-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+#notes .window-content h2 {
+  color: #fff;
+}
+
+#notes .window-content p {
+  color: #fff;
+}
+
+#sidebar {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+#sidebar > div {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+#sidebar > div:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#notesContent {
+  color: #fff;
 }
 
