@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="topbar" id="top">
-        <p class="topbar-text">SebOS Portfolio</p>
-        <p class="topbar-note">🎒School is boring rn📓</p>
+        <p class="topbar-text" id="steamStatus">🔄 Loading Steam...</p>
+        <p class="topbar-note">🇷🇺Heavy is def the best class🇷🇺</p>
         <p id="timeElement">6/21/2023 3:41 PM</p>
     </div>
     <div class="desktop-icons">
@@ -20,9 +20,9 @@
             <div class="desktop-icon-glyph">📁</div>
             <span class="desktop-icon-label">About Me</span>
         </div>
-        <div class="desktop-icon" id="notesIcon">
-            <div class="desktop-icon-glyph">📓</div>
-            <span class="desktop-icon-label">Notes</span>
+        <div class="desktop-icon" id="certificatesIcon">
+            <img src="./gnome-certificate.png" style="width: 40px; height: 40px; border-radius: 8px;">
+            <span class="desktop-icon-label">Certificates</span>
         </div>
         <div class="desktop-icon" id="infoIcon">
             <div class="desktop-icon-glyph">ℹ️</div>
@@ -46,17 +46,17 @@
             <p>Now I'm currently learning Unity development and JavaScript.</p>
             <p>Its summer vacation! I can do as many things as I want.</p>
         </div>
-    <div class="window" id="notes" style="top: calc(50% - 240px); left: calc(50% - 260px); display: none;">
-        <div class="windowheader" id="notesheader">
-            <div class="header-group">
-                <h1 class="window-title">Notes</h1>
-            </div>
-            <div class="closebutton" id="notesclose"></div>
-        </div>
-        <div class="window-content" style="height: 480px; width: 520px; padding: 16px; display: flex; gap: 16px;">
-            <div id="sidebar" style="background-color: #f9f9f9; width: 140px; border-radius: 12px; padding: 12px; overflow-y: auto; flex-shrink: 0;"></div>
-            <div id="notesContent" style="flex: 1; overflow-y: auto; padding: 12px;"></div>
-        </div>
+    <div class="window" id="certificates" style="top: calc(50% - 240px); left: calc(50% - 320px); display: none;">
+       <div class="windowheader" id="certificatesheader">
+           <div class="header-group">
+               <h1 class="window-title">Certificates</h1>
+           </div>
+           <div class="closebutton" id="certificatesclose"></div>
+       </div>
+       <div class="window-content" style="height: 480px; width: 640px; padding: 16px; display: flex; gap: 16px;">
+           <div id="certificatesList" style="display: flex; flex-direction: column; gap: 8px; overflow-y: auto; width: 200px; flex-shrink: 0;"></div>
+           <div id="certificateViewer" style="flex: 1; background-color: #f5f5f5; border-radius: 8px; overflow: hidden;"></div>
+       </div>
     </div>
     <script>
     function updateTime() {

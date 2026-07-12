@@ -1,0 +1,28 @@
+{
+  "name": "mywebos-porfolio",
+  "version": "1.0.0",
+  "description": "This is going to be one of the missins im doing for the stardance challenge.",
+  "main": "script.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bald-gordon/MyWebOS-Porfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bald-gordon/MyWebOS-Porfolio/issues"
+  },
+  "homepage": "https://github.com/Bald-gordon/MyWebOS-Porfolio#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-fetch": "^2.7.0"
+  }
+}

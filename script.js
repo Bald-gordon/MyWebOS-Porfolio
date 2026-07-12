@@ -2,23 +2,50 @@ let selectedIcon = null;
 let biggestIndex = 1;
 let topBar = document.querySelector("#top");
 
-var content = [
-  {
-    title: "Welcome",
-    date: "06/28/2023",
-    content: `<p>Welcome to my <strong>Notes App</strong></p>
-      <p>This is my first app built for SebOS!</p>
-      <p>I can edit this content and create more notes.</p>`
-  },
-  {
-    title: "My Projects",
-    date: "06/29/2023",
-    content: `<p><strong>Current Projects:</strong></p>
-      <p>• Learning Unity</p>
-      <p>• Building JavaScript apps</p>
-      <p>• Creating webOS portfolio</p>`
-  }
+var certificates = [
 ];
+
+// Steam status tracking
+async function updateSteamStatus() {
+  try {
+    const response = await fetch('http://localhost:3002/api/steam-status');
+    const data = await response.json();
+    const steamElement = document.getElementById('steamStatus');
+    
+    if (data.error) {
+      steamElement.textContent = '⚙️ SebOS Portfolio';
+      console.warn('Steam API error:', data.error);
+      return;
+    }
+    
+    let statusText = '';
+    
+    if (data.status === 'offline') {
+      statusText = '🔴 Offline';
+    } else if (data.status === 'online') {
+      if (data.game) {
+        statusText = `🎮 Playing ${data.game}`;
+      } else {
+        statusText = '🟢 Online';
+      }
+    } else if (data.status === 'away') {
+      statusText = '🟡 Away';
+    } else if (data.status === 'busy') {
+      statusText = '🔴 Busy';
+    } else {
+      statusText = '⚙️ SebOS Portfolio';
+    }
+    
+    steamElement.textContent = statusText;
+  } catch (error) {
+    console.error('Failed to fetch Steam status:', error);
+    document.getElementById('steamStatus').textContent = '⚙️ SebOS Portfolio';
+  }
+}
+
+// Update Steam status every 30 seconds
+updateSteamStatus();
+setInterval(updateSteamStatus, 30000);
 
 function openWindow(element) {
   element.style.display = "flex";
@@ -49,6 +76,57 @@ function initializeWindow(windowId) {
       window.style.display = "none";
     });
   }
+}
+
+function displayCertificate(index) {
+  const certItem = certificates[index];
+  const viewer = document.querySelector("#certificateViewer");
+  const topbarNote = document.querySelector(".topbar-note");
+  
+  if (topbarNote) {
+    topbarNote.textContent = `📜 ${certItem.title}`;
+  }
+  
+  // Display image in viewer
+  viewer.innerHTML = `
+    <img src="./gnome-certificate.png" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box;">
+  `;
+}
+
+function addCertificateToList(index) {
+  const listDiv = document.querySelector("#certificatesList");
+  const cert = certificates[index];
+  const certDiv = document.createElement("div");
+  
+  certDiv.style.padding = "12px";
+  certDiv.style.borderRadius = "8px";
+  certDiv.style.backgroundColor = "#fff";
+  certDiv.style.border = "1px solid #ddd";
+  certDiv.style.cursor = "pointer";
+  certDiv.style.transition = "background-color 0.2s";
+  
+  certDiv.innerHTML = `
+    <p style="font-size: 11px; margin: 0px 0px 4px 0px; color: #666;">
+      ${cert.issuer}
+    </p>
+    <p style="font-size: 10px; margin: 0px; color: #999;">
+      ${cert.date}
+    </p>
+  `;
+  
+  certDiv.addEventListener("mouseover", function() {
+    certDiv.style.backgroundColor = "#efefef";
+  });
+  
+  certDiv.addEventListener("mouseout", function() {
+    certDiv.style.backgroundColor = "#fff";
+  });
+  
+  certDiv.addEventListener("click", function() {
+    displayCertificate(index);
+  });
+  
+  listDiv.appendChild(certDiv);
 }
 
 function setNotesContent(index) {
@@ -93,14 +171,14 @@ function addToSideBar(index) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeScreen = document.getElementById("welcome");
-  const notesScreen = document.getElementById("notes");
-  const notesIcon = document.getElementById("notesIcon");
+  const certificatesScreen = document.getElementById("certificates");
+  const certificatesIcon = document.getElementById("certificatesIcon");
   const infoIcon = document.getElementById("infoIcon");
   const aboutMeIcon = document.getElementById("aboutMeIcon");
 
   // Initialize windows
   initializeWindow("welcome");
-  initializeWindow("notes");
+  initializeWindow("certificates");
 
   // About Me icon - opens welcome window
   if (aboutMeIcon) {
@@ -120,21 +198,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Notes icon - opens notes window
-  if (notesIcon) {
-    notesIcon.addEventListener("click", function (e) {
+  // Certificates icon - opens certificates window
+  if (certificatesIcon) {
+    certificatesIcon.addEventListener("click", function (e) {
       e.stopPropagation();
-      selectIcon(notesIcon);
-      openWindow(notesScreen);
+      selectIcon(certificatesIcon);
+      openWindow(certificatesScreen);
     });
   }
 
-  // Populate sidebar and set initial content
-  for (let i = 0; i < content.length; i++) {
-    addToSideBar(i);
+  // Populate certificates list and set initial content
+  for (let i = 0; i < certificates.length; i++) {
+    addCertificateToList(i);
   }
-  if (content.length > 0) {
-    setNotesContent(0);
+  if (certificates.length > 0) {
+    displayCertificate(0);
   }
 
   document.querySelectorAll(".desktop-icon").forEach(function (icon) {
