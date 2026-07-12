@@ -5,8 +5,8 @@ let topBar = document.querySelector("#top");
 var certificates = [
   {
     title: "Game Design & Dev",
-    issuer: "Hack Club",
-    date: "2024",
+    issuer: "Coursera",
+    date: "May 2026",
     file: "gamedesignandev.png"
   }
 ];
