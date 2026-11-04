@@ -12,6 +12,7 @@ var certificates = [
 ];
 
 // Steam status tracking
+// ts broken af, wast of ai
 async function updateSteamStatus() {
   try {
     const response = await fetch('http://localhost:3002/api/steam-status');
